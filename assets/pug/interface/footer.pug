@@ -1,0 +1,50 @@
+footer.footer 
+	.section_in 
+		.footer_main
+			.footer_top 
+				.footer_form_title 
+					h6 Оставьте заявку, и мы свяжемся с вами!
+				form.footer_form
+					.footer_inputs_row
+						+input({
+							place: 'Ваше имя',
+							class: 'footer'
+						})
+						+input({
+							place: 'Ваш телефон',
+							class: 'footer',
+							type: 'tel'
+						})
+						+btn({
+							type: 'submit'
+						})
+					.footer_policy!='Отправляя форму, вы соглашаетесь с <a href="/policy/">Политика конфиденциальности</a>'
+			.footer_contacts 
+				ul.footer_contacts_list 
+					li 
+						a(href="#")
+							.action_contactsItem_icon 
+								+icon('phone')
+							p +7 996 975 69 19
+					li 
+						a(href="#")
+							.action_contactsItem_icon 
+								+icon('envelope')
+							p woodland1984@mail.ru
+					li 
+						a(href="#")
+							.action_contactsItem_icon 
+								+icon('map')
+							p Великий Новгород
+				ul.header_social.mod_social_footer 
+					each item in ['wa', 'vk']
+						li 
+							a(href="#")
+								img(src=`i/global/${item}.svg`, alt="")
+			.footer_bottom 
+				.footer_col_left 
+					.footer_copyright © 2022 Все права защищены
+					a(href="#")  Политика конфиденциальности
+				.footer_col_brand 
+					a(href="#")
+						img(src="i/global/brand.svg", alt="")

@@ -1,0 +1,115 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Wood Island'}
+block content_block
+	section.hero(style="background-image: url('i/hero.jpg')") 
+		.section_in 
+			.hero_main 
+				.hero_title 
+					h1 Строительство каркасных и брусовых домов
+				ul.hero_serviceList 
+					each item in ['Новгородская', 'Ленинградская', 'Московская']
+						li.hero_serviceItem 
+							.hero_serviceItem_icon 
+								img(src="i/global/data.svg", alt="")
+							.hero_serviceItem_content 
+								p=item
+								span область
+				+btn({
+					class: 'hero_btn',
+				})
+	section.typeHome 
+		.section_in 
+			.section_head 
+				.section_title 
+					h2 Виды домов
+				.section_btn_more 
+					a(href="#") Показать все
+			ul.typeHome_list
+				-for(i = 0; i < 2; i++)
+					- var titleCard = ['Каркасные дома', 'Дома из бруса']
+						li 
+							+card({
+								names: titleCard[i],
+								img: `cat_${i}`
+							})
+	section.popular 
+		.section_in 
+			.popular_main 
+				.section_title 
+					h3 Популярные дома
+				ul.popular_list.global_products 
+					-for(i = 0; i < 6; i++)
+							+products({
+								news: false,
+							})
+	section.action 
+		.section_in 
+			.action_main 
+				.action_content 
+					.action_title 
+						h3 Консультация и выезд специалиста БЕСПЛАТНО!
+					ul.action_contacts 
+						li 
+							a(href="#")
+								.action_contactsItem_icon 
+									+icon('phone')
+								p +7 996 975 69 19
+						li 
+							a(href="#")
+								.action_contactsItem_icon 
+									+icon('envelope')
+								p woodland1984@mail.ru
+				form.action_form
+					+input({
+						place: 'Ваше имя',
+						class: 'action'
+					})
+					+input({
+						place: 'Ваш телефон',
+						class: 'action',
+						type: 'tel'
+					})
+					.action_form_bottom
+						+btn({
+							type: 'submit'
+						})
+						.action_policy!='Отправляя форму, вы соглашаетесь с <a href="/policy/">Политика конфиденциальности</a>'
+	section.about 
+		.section_in 
+			.about_main 
+				.about_content 
+					.about_title 
+						h4 О Компании
+					.about_content_txt.global_txt 
+						p Наша команда имеет опыт строительства каркасных и брусовых домов более 15 лет. За это время было возведено большое количество объектов в разных регионах. Осуществляем строительство загородных домов любой сложности, как по Вашим так и по нашим проектам. В каждом проекте у нас есть четкое и понятное видение того, как он должен быть реализован.
+						p Мы не пытаемся самореализоваться за счет клиента, нам это просто не нужно. Мы ориентированы на то, чтобы созданная нами работа приносила ожидаемый результат, именно на это направлены наши усилия на всех этапах работы. Мы дорожим нашей репутацией, поэтому со всей ответственностью подходим к работе и любому проекту.
+				.about_slider_w 
+					.about_slider.swiper 
+						.swiper-wrapper
+							-for(i = 0; i < 6; i++) 
+								.swiper-slide 
+									.about_slide 
+										img(src="i/cat/product.jpg", alt="")
+						.about_bottomNav 
+							.aboutSlider_nav 
+								.about_slider_next.next 
+									+icon('next')
+								.about_slider_prev.prev 
+									+icon('prev')
+							.aboutSlider_scrollbar
+	section.homenews 
+		.section_in 
+			.section_head 
+				.section_title 
+					h2 Популярные статьи
+				.section_btn_more 
+					a(href="#") Показать все
+			ul.popularNews_grid
+				-for(i = 0; i < 4; i++)
+					+products({
+							news: true,
+						})
+
+		

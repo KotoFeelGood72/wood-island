@@ -1,0 +1,82 @@
+// Btn 
+
+mixin btn(data)
+	.btn(class=data.class)
+		button(type=data.type ? data.type : type="button")=data.name ? data.name : 'Оставить заявку'
+
+// End
+
+// Card
+mixin card(data)
+	.card_cat
+		img(src=`i/cat/${data.img}.jpg`, alt="")
+		.card_cat_head 
+			h3=data.names
+			.card_count=data.count ? data.count : '20'
+		.card_cat_bottom 
+			.card_cat_price 
+				p 5 000 000
+			+btn({
+				class: 'card_catBtn trans_mod',
+				name: 'Смотреть проекты'
+			})
+		
+
+// End
+
+// Products
+
+mixin products(data)
+	if data.news
+		.productCard
+			a(href="#")  
+				.productsCard_img 
+					img(src="i/cat/product.jpg", alt="")
+					.cardNews_date 
+						.cardNews_icon 
+							+icon('date')
+						p 19.12.2022
+				.productsCard_content 
+					h3 Дом "Барнхаус 3"
+					.productsCard_txt 
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...
+				.productsCard_bottom 
+					a(href="#") Подробнее 
+	else 
+		.productCard
+			a(href="#")  
+				.productsCard_img 
+					img(src="i/cat/product.jpg", alt="")
+				.productsCard_content 
+					h3 Дом "Барнхаус 3"
+					ul.productsCard_params
+						li 
+							p Площадь:
+							span 19.5x14 м
+						li 
+							p Размер:
+							span 224,5 м2
+						li 
+							p Материал:
+							span каркас
+						li 
+							p Этажей:
+							span 1
+				.productsCard_bottom 
+					+btn({
+						class: 'productsCard_link',
+						name: 'Подробнее',
+					})
+					.productsCard_price 
+						p 14 000 000
+
+
+// End
+
+// Input
+
+mixin input(data)
+	.global_input(class=`${data.class}_input`)
+		input(type=data.type ? data.type : type="text" placeholder=data.place ? data.place : '' name=`${data.class}${data.type}` min=data.min ? data.min : '' max=data.max ? data.max : '' value=data.val ? data.val : '')
+
+// End

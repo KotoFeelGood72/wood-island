@@ -1,0 +1,70 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: $header;
+	width: 100%;
+	will-change: transform;
+	@include z-index(header);
+	* {
+		color: $white;
+	}
+}
+
+.header {
+}
+.section_in {
+}
+.header_main {
+	@include flex-space;
+}
+.header_logo {
+	margin-right: 6rem;
+}
+.header_nav {
+	margin-right: 14rem;
+	ul {
+		@include flex-start;
+
+		li {
+			&:not(:last-child) {
+				margin-right: 6rem;
+			}
+		}
+	}
+}
+.header_info {
+	@include flex-start;
+	align-items: flex-start;
+}
+.header_social {
+	@include flex-start;
+	margin-right: 4rem;
+	li {
+		width: 4.4rem;
+		@include flex-center;
+		&:not(:last-child) {
+			margin-right: 2.5rem;
+		}
+	}
+}
+.header_phone_w {
+	text-align: right;
+	flex: 1;
+}
+.header_phone {
+	a {
+		font-size: 2.5rem;
+		display: block;
+		margin-bottom: 0.5rem;
+		font-family: $font_4;
+	}
+}
+.header_action {
+	font-size: 1.6rem;
+	border-bottom: .1rem dashed $white;
+	display: inline-flex;
+	padding-bottom: 0.3rem;
+}
+.trigger_form {
+}

@@ -1,0 +1,27 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Статьи - Название статьи - Wood Island'}
+block content_block
+	+breadcrumb(['Главная', 'Cтатьи'], 'Название статьи')
+	section.singleNews 
+		.section_in 
+			.singleNews_main 
+				.singleNews_img 
+					img(src="i/cat/product.jpg", alt="")
+				.singleNews_content 
+					.defaultBlock 
+						h2 Заголовок
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+					.defaulBlock_full 
+						.defaultBlock_img
+							img(src="i/cat/product.jpg", alt="")
+						.default_block_txt 
+							h2 Список
+							ul 
+								-for(i = 0; i < 3; i++)
+									li - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					.defaultBlock
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat

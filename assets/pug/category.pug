@@ -1,0 +1,17 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Каталог домов - Wood Island'}
+block content_block
+	+breadcrumb(['Главная'], 'Каталог домов')
+	section.homeCat 
+		.section_in 
+			.homeCat_main 
+				ul.typeHome_list
+					-for(i = 0; i < 3; i++)
+						- var titleCard = ['Каркасные дома', 'Дома из бруса', 'Барнхаусы']
+							li 
+								+card({
+									names: titleCard[i],
+									img: `cat_${i}`
+								})

@@ -1,0 +1,68 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Каркасные дома - Wood Island'}
+block content_block
+	+breadcrumb(['Главная', 'Каталог'], 'Каркасные дома')
+	section.shop 
+		.section_in
+			.shopFilter 
+				ul.filterShop_list 
+					each item in ['Одноэтажные', 'Полутораэтажные', 'С мансардой', 'Двухэтажные']
+						li 
+							a(href="#")=item
+				.shopFilter_main 
+					.shopFilter_row.priceInput_row 
+						+input({
+							class: 'shop priceMin',
+							type: 'number',
+							val: '2 000 000',
+							min: '2 000 000',
+							place: '2 000 000',
+						})
+						+input({
+							class: 'shop priceMax',
+							type: 'number',
+							val: '14 000 000',
+							max: '14 000 000',
+							place: '14 000 000',
+						})
+					.shopFilter_row.areaInput_row 
+						+input({
+							class: 'shop areaMin',
+							val: '10.2',
+							place: '10.2',
+						})
+						+input({
+							class: 'shop areaMax',
+							val: '60.4',
+							place: '60.4',
+						})
+					.shopFilter_row.shopFilter_btn__group
+						+btn({
+							class: 'show_productsBtn',
+							name: 'Показать'
+						})
+						+btn({
+							class: 'clear_productsBtn',
+							name: 'Сбросить'
+						})
+			ul.shop_grid
+				-for(i = 0; i < 6; i++)
+					li.shop_item
+						+products({
+							news: false
+						})
+			.btn_listsMore.shop_moreBtn 
+				a(href="#") 
+					.shop_btnMore_icon 
+						+icon('down')
+					p Показать больше
+
+	.gallery_slider.swiper 
+		.swiper-wrapper
+			-for(i = 0; i < 12; i++) 
+				.swiper-slide 
+					.gallery_img 
+						img(src="dfsdsds", alt="")
+			

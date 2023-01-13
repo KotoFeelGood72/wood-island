@@ -1,0 +1,20 @@
+.popup
+	.popup_bg.popup_close 
+	.popup_main
+		.popup_closeBtn.popup_close
+		h3 Оставьте заявку
+		form.popup_form
+			+input({
+				class: 'popup',
+				place: 'Ваше имя'
+			})
+			+input({
+				class: 'popup',
+				place: 'Ваш телефон',
+				type: 'number'
+			})
+			+btn({
+				name: 'Оставить заявку',
+				type: 'submit'
+			})
+			.popup_policy!='Отправляя форму, вы соглашаетесь с <a target="_blank" href="#">политикой конфиденциальности</a>.'

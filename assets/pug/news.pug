@@ -1,0 +1,19 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Статьи - Wood Island'}
+block content_block
+	+breadcrumb(['Главная'], 'Статьи')
+	section.news 
+		.section_in
+			ul.shop_grid.news_grid_mod
+				-for(i = 0; i < 6; i++)
+					li.shop_item
+						+products({
+							news: true
+						})
+			.btn_listsMore.news_moreBtn
+				a(href="#") 
+					.shop_btnMore_icon 
+						+icon('down')
+					p Показать больше

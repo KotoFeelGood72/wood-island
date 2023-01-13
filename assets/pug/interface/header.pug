@@ -1,0 +1,22 @@
+header.header 
+	.section_in 
+		.header_main
+			.header_logo 
+				a(href="#")
+					img(src="i/global/logo.svg", alt="")
+			nav.header_nav 
+				ul
+					each item in ['Главная', 'Каталог', 'Статьи', 'Отзывы', 'Контакты']
+						li 
+							a(href="#")=item
+			.header_info 
+				ul.header_social 
+					each item in ['wa', 'vk']
+						li 
+							a(href="#")
+								img(src=`i/global/${item}.svg`, alt="")
+				.header_phone_w
+					.header_phone
+						a(href="tel:+79969756919") +7 996 975 69 19
+					.header_action.trigger_form
+						button(type="button") Перезвоните мне

@@ -1,0 +1,117 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Каркасные дома - Название дома - Wood Island'}
+block content_block
+	+breadcrumb(['Главная', 'Каталог', 'Каркасные дома'], 'Название дома')
+	section.singleProducts 
+		.section_in 
+			.singleProducts_head 
+				.singleProducts_preview 
+					.singleProducts_slider.swiper 
+						.swiper-wrapper
+							-for(i = 0; i < 12; i++)
+								.swiper-slide 
+									.single_img 
+										img(src="i/cat/product.jpg", alt="")
+						.singleProducts_nav 
+							.singleProudcts_nav_btn.prev_single
+								+icon('prev')
+							.singleProudcts_nav_btn.next_single 
+								+icon('next')
+					.singleProducts_thumb_slider.swiper 
+						.swiper-wrapper
+							-for(i = 0; i < 12; i++) 
+								.swiper-slide 
+									.singleProducts_thumb
+										img(src="i/cat/product.jpg", alt="")
+				.singleProducts_params 
+					ul 
+						-for(i = 0; i < 4; i++)
+							- let label = ['Площадь:', 'Материал:', 'Размер:', 'Этажей:']
+							- let val = ['19.5x14 м', 'каркас', '224,5 м2', '1']
+								li 
+									p=label[i]
+									span=val[i]
+					ul.singleProducts_price 
+						li 
+							p Под ключ:
+							span 14 000 000 ₽
+						li 
+							p Без отделки:
+							span 14 000 000 ₽
+					.singleProducts_variant_btn 
+						+btn({
+							class: 'trigger_form',
+							name: 'Заказать'
+						})
+						.other_variant_btn 
+							a(href="#") Вариант из бруса
+			.singleProducts_description 
+				h2 Описание
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			.singleProducts_complect 
+				h3 Комплектации
+				ul.singleProducts_tab_link 
+					-for(i = 0; i < 3; i++)
+						- let link = ['Под ключ', 'Без отделки', 'Рекомендации к проекту']
+							li(data-link=`complect_${i}`)=link[i]
+				ul.singleProducts_tab_w 
+					li.singleProducts_tab_item(data-tab=`complect_${i}`)
+						ul 
+							-
+								let lists = [
+									{
+										title: 'Фундамент',
+										txt: 'Обсчитывается отдельно. Смотрите рекомендации к проекту'
+									},
+									{
+										title: 'Гидроизоляция',
+										txt: 'Рубероид в 2 слоя'
+									},
+									{
+										title: 'Высота 1-го этажа',
+										txt: '2,50м.(допуски по высоте: +\-50мм.)'
+									},
+									{
+										title: 'Основание 2-е',
+										txt: 'Первый ряд: брус 150х150мм. и перемычки 100х150мм. – камерной сушки. Второй ряд: брус 100х150мм. и перемычки 100х150мм. – камерной сушки. Обрабатывается Антисептиком.'
+									},
+									{
+										title: 'Лаги 1-го этажа',
+										txt: 'Доска 50х150мм. – камерной сушки, на ребро с шагом 590мм. Обрабатывается Антисептиком.'
+									},
+									{
+										title: 'Черновой пол 1-го этажа',
+										txt: 'Брусок 40х50мм. - камерной сушки. На него закладывается черновой пол: обрезная доска 22х100мм. – камерной сушки. Обрабатывается Антисептиком.'
+									},
+								] 
+							each item in lists 
+								li 
+									p=item.title 
+									span=item.txt 
+	section.crossel
+		.section_in 
+			.crossel_main
+				.crossel_head
+					.section_title 
+						h4 Смотрите также
+					.crossel_nav 
+						.crossel_nav_btn.prev_cross 
+							+icon('prev')
+						.crossel_nav_btn.next_cross 
+							+icon('next')
+				.crossel_slider_w 
+					.crossel_slider.swiper 
+						.swiper-wrapper
+							-for(i = 0; i < 6; i++) 
+								.swiper-slide 
+									.crossel_slide 
+										+products({
+											news: false
+										})
+
+	
+
+						

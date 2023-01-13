@@ -1,0 +1,39 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Отзывы - Wood Island'}
+block content_block
+	+breadcrumb(['Главная'], 'Отзывы')
+	section.reviews 
+		.section_in
+			.reviews_main
+				.reviews_grid 
+					ul.reviews_list 
+						-for(i = 0 ; i < 4; i++)
+							if i === 0
+								li.reviews_item 
+									h3 Имя Фамилия
+									.reviews_item_txt!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </br></br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... </br></br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...'
+									.reviews_item_bottom 
+										.reviews_item_more Подробнее
+										.reviews_item_date 21 / 12 / 2022
+							else 
+								li.reviews_item 
+									h3 Имя Фамилия
+									.reviews_item_txt!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </br></br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... </br></br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...'
+									.reviews_item_bottom 
+										.reviews_item_date 21 / 12 / 2022
+					.btn_listsMore.reviews_moreBtn
+						a(href="#") 
+							.shop_btnMore_icon 
+								+icon('down')
+							p Показать больше
+				.reviews_video 
+					.section_title 
+						h2 Видео отзывы
+					ul.reviews_gridVideo
+						-for(i = 0; i < 4; i++)
+							li.reviews_gridVideo_item
+								img(src="i/cat/product.jpg", alt="")
+								a(href="https://www.youtube.com/watch?v=MZlVosE3U8g" data-fancybox)
+									img(src="i/global/play.svg", alt="")

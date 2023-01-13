@@ -1,0 +1,33 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Контакты - Wood Island'}
+block content_block
+	+breadcrumb(['Главная'], 'Контакты')
+	section.contacts 
+		.section_in 
+			.contacts_main 
+				.contacts_info
+					ul.contacts_infoList
+						li 
+							a(href="tel:89969756919")
+								.contacts_infoItem_icon 
+									+icon('phone')
+								p +7 996 975 69 19
+						li 
+							a(href="mailto:woodland1984@mail.ru")
+								.contacts_infoItem_icon 
+									+icon('envelope')
+								p woodland1984@mail.ru
+						li 
+							a(href="#")
+								.contacts_infoItem_icon 
+									+icon('map')
+								p Великий Новгород
+					ul.header_social 
+						each item in ['wa', 'vk']
+							li 
+								a(href="#")
+									img(src=`i/global/${item}.svg`, alt="")
+				.contacts_map 
+					#map

@@ -1,0 +1,78 @@
+// Global 
+$header: 9.1rem;
+$footer: 22.8rem;
+
+// Mobile
+$header_mob: 6rem;
+$footer_mob: 10rem;
+
+//---------------------------------------------fonts
+$font_path: "../fonts/";
+$font_1: 'Manrope-Regular', sans-serif;
+$font_2: 'Manrope-Medium', sans-serif;
+$font_3: 'Manrope-Semibold', sans-serif;
+$font_4: 'Manrope-Bold', sans-serif;
+
+$font_size_base: 2rem;
+//---------------------------------------------fonts###
+
+//---------------------------------------------colors
+$white: #fff;
+$black: #000;
+$dark: #282828;
+$trans: transparent;
+$green: #308F6B;
+
+$gradient: linear-gradient(265.33deg, #46ACD4 -4.6%, #41A981 101.96%);
+$shadow: .9rem .4rem 2rem rgba(144, 207, 232, 0.42);
+$small-grad: linear-gradient(80.5deg, rgba(20, 20, 20, 0.9) 3.22%, rgba(20, 20, 20, 0) 107.81%);
+$big-grad: linear-gradient(279.59deg, rgba(20, 20, 20, 0.7) 3.57%, rgba(20, 20, 20, 0) 128.11%), radial-gradient(75.24% 75.24% at 64.53% 24.76%, rgba(20, 20, 20, 0.5) 0%, rgba(20, 20, 20, 0) 100%);
+
+$m10: 10rem;
+$m15: 15rem;
+
+$color_text_base: $black;
+$color_link_base: $black;
+$body_bg: $white;
+//---------------------------------------------colors###
+
+//---------------------------------------------z-index
+$z-index: (
+	popup : 101,
+	header : 100,
+	footer : 100,
+	el: -1,
+
+);
+//---------------------------------------------z-index###
+
+//---------------------------------------------layout
+$page_width: 132.1rem;
+
+//---------------------------------------------layout###
+
+//---------------------------------------------global values
+$gl_radius: 2.4rem;
+//---------------------------------------------global values###
+
+//---------------------------------------------media points
+$point_1: 1200px;
+$point_2: 1024px;
+$point_3: 1023px;
+$point_4: 768px;
+$point_5: 640px;
+$point_6: 480px;
+$point_7: 375px;
+$point_8: 320px;
+//---------------------------------------------media points
+
+//---------------------------------------------forms
+$input_height: 4rem;
+$input_offset: 0 2rem;
+$input_font_size: $font_size_base;
+$input_border_color: #ccc;
+$input_border_color_active: $dark;
+$input_placeholder_color: rgba($dark, .7);
+$input_text_color: $dark;
+$input_radius: $gl_radius;
+//---------------------------------------------forms###
