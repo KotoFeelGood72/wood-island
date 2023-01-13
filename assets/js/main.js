@@ -270,6 +270,31 @@ $(document).ready(function()  {
 
 
 
+const aboutSlider = new Swiper('.about_slider', {
+	navigation: {
+		nextEl: '.next',
+		prevEl: '.prev'
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1.5,
+			spaceBetween: 21
+		},
+		768: {
+			slidesPerView: 1.5,
+			spaceBetween: 21
+		},
+		1024: {
+			slidesPerView: 1.5,
+			spaceBetween: 21
+		},
+		1200: {
+			slidesPerView: 1.4,
+			spaceBetween: 21
+		}
+	}
+})
+
 
 
 
