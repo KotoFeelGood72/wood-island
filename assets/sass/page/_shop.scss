@@ -1,0 +1,236 @@
+.shop {
+	margin-bottom: $m10;
+}
+.section_in {
+}
+.shopFilter {
+}
+.filterShop_list {
+	@include flex-start;
+	margin-bottom: 6.3rem;
+	@include bp($point_2) {
+		margin-bottom: 4rem;
+	}
+	@include bp($point_5) {
+		flex-wrap: wrap;
+		margin: -.5rem -.5rem 3rem 0;
+	}
+	li {
+		@include bp($point_5) {
+			display: inline-flex;
+			padding: .5rem .5rem 0 0;
+		}
+		a {
+			border-bottom: .1rem dashed $trans;
+			display: block;
+			font-family: $font_2;
+			@include bp($point_2) {
+				background-color: $green;
+				padding: 1rem 2rem;
+				color: $white;
+				border-radius: 5rem;
+			}
+			@include bp($point_5) {
+				font-size: 1.4rem;
+				padding: .5rem 1.5rem;
+			}
+		}
+		&.active {
+			a {
+				color: $green;
+				line-height: 2.4rem;
+				border-bottom: .1rem dashed $green;
+				@include bp($point_2) {
+					background-color: $dark;
+					color: $white;
+				}
+			}
+		}
+		&:not(:last-child) {
+			margin-right: 6rem;
+			@include bp($point_2) {
+				margin-right: 2rem;
+			}
+			@include bp($point_5) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+.shopFilter_main {
+	margin-bottom: $m10;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	grid-gap: 5rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));	
+		grid-gap: 2rem
+	}
+	@include bp($point_5) {
+		grid-gap: .5rem;
+		margin-bottom: 7rem;
+	}
+}
+.shopFilter_row {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+	grid-gap: 1rem;
+	padding-top: 4.1rem;
+	position: relative;
+	@include bp($point_2) {
+		padding-top: 3.4rem;
+	}
+
+	p {
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 1.8rem;
+		@include bp($point_2) {
+			font-size: 1.6rem;
+		}
+		@include bp($point_5) {
+			font-size: 1.4rem;
+		}
+	}
+}
+
+.shop_input {
+	position: relative;
+	margin-bottom: 0;
+	display: flex;
+	max-height: 4.9rem;
+	&:before {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 1.5rem;
+		font-size: 1.8rem;
+		opacity: .9;
+		@include bp($point_5) {
+			font-size: 1.4rem;
+		}
+	}
+	input {
+		background: rgba(20, 20, 20, 0.05);
+		border-radius: 10rem;
+		font-size: 1.8rem;
+		font-family: $font_2;
+		width: 100%;
+		padding: 1.2rem 2rem 1.2rem 4.5rem;
+		@include bp($point_5) {
+			font-size: 1.4rem;
+			padding: 1rem 2rem 1rem 4.3rem;
+		}
+	}
+}
+.priceInput_row {
+}
+.global_input {
+}
+.priceMin_input {
+	&:before {
+		content: 'от';
+	}
+}
+.priceMax_input {
+	&:before {
+		content: 'до';
+	}
+}
+.areaInput_row {
+}
+.areaMin_input {
+	&:before {
+		content: 'от';
+	}
+}
+.areaMax_input {
+	&:before {
+		content: 'до';
+	}
+}
+.shopFilter_btn__group {
+	@include bp($point_2) {
+		grid-column: span  2;
+		max-width: 40rem;
+		padding-top: 0;
+	}
+
+	@include bp($point_5) {
+		margin-top: 1rem;
+	}
+
+	.btn {
+		box-shadow: none;
+		@include bp($point_5) {
+			width: 100%;
+		}
+		button {
+			padding: 1.2rem 5rem;
+			font-size: 1.8rem;
+			@include bp($point_5) {
+				font-size: 1.4rem;
+				padding: 1rem 3rem;
+				width: 100%;
+			}
+		}
+		&:first-child {
+			button, input[type="submit"], a {
+				background: $dark;
+			}
+		}
+		&:nth-child(2) {
+			button, input[type="submit"], a {
+				background: $trans;
+				border: .1rem solid rgba(20, 20, 20, 0.2);
+				color: $dark;
+			}
+		}
+	}
+}
+.btn {
+}
+.show_productsBtn {
+}
+.clear_productsBtn {
+}
+.shop_grid {
+	margin-bottom: 6rem;
+}
+.shop_item {
+}
+.productCard {
+}
+.productsCard_img {
+}
+.productsCard_content {
+}
+.productsCard_params {
+}
+.productsCard_bottom {
+}
+.productsCard_link {
+}
+.productsCard_price {
+}
+.btn_listsMore {
+}
+.shop_moreBtn {
+}
+.shop_btnMore_icon {
+}
+.icon {
+}
+.icon-down {
+}
+.gallery_slider {
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.gallery_img {
+}

@@ -10,8 +10,10 @@
 <!-- Products-->
 <!-- End-->
 <!-- Input-->
-<!-- End--><!DOCTYPE html>
+<!-- End-->
+<!-- Header mixin --><!DOCTYPE html>
 <html lang="en">
+  <div class="loader"></div>
   <head>
     <meta charset="UTF-8"/>
     <title>Контакты - Wood Island</title>
@@ -22,10 +24,10 @@
     <link rel="stylesheet" media="all" href="styles/main_global.css"/>
   </head>
   <body>
-    <header class="header"> 
+    <header class="header dark"> 
       <div class="section_in"> 
         <div class="header_main">
-          <div class="header_logo"> <a href="#"><img src="i/global/logo.svg" alt=""></a></div>
+          <div class="header_logo"> <a href="/"><img src="i/global/logo.svg" alt=""/></a></div>
           <nav class="header_nav"> 
             <ul>
               <li> <a href="#">Главная</a></li>
@@ -37,16 +39,17 @@
           </nav>
           <div class="header_info"> 
             <ul class="header_social"> 
-              <li> <a href="#"><img src="i/global/wa.svg" alt=""></a></li>
-              <li> <a href="#"><img src="i/global/vk.svg" alt=""></a></li>
+              <li> <a href="#"><img src="i/global/wa.svg" alt=""/></a></li>
+              <li> <a href="#"><img src="i/global/vk.svg" alt=""/></a></li>
             </ul>
             <div class="header_phone_w">
               <div class="header_phone"><a href="tel:+79969756919">+7 996 975 69 19</a></div>
-              <div class="header_action trigger_form">
+              <div class="header_action trigger">
                 <button type="button">Перезвоните мне</button>
               </div>
             </div>
           </div>
+          <div class="header_burger"> <span> </span><span> </span><span> </span></div>
         </div>
       </div>
     </header>
@@ -57,9 +60,7 @@
             <div class="error_main"> 
               <h1>404</h1>
               <p>Такой страницы не существует</p>
-              <div class="btn btn_back">
-                <button type="button">Вернуться на главную</button>
-              </div>
+              <div class="btn btn_back"><a href="/">Вернуться на главную</a></div>
             </div>
           </div>
         </section>
@@ -134,22 +135,51 @@
     <script src="js/menu.js"></script>
     <script src="js/main.js"></script>
     <div class="popup">
-      <div class="popup_bg popup_close"> </div>
+      <div class="popup_bg popup_close removePopup"></div>
       <div class="popup_main">
-        <div class="popup_closeBtn popup_close"></div>
+        <div class="popup_close removePopup">
+          <svg class="icon icon-close ">
+            <use xlink:href="i/sprite/sprite.svg#close"></use>
+          </svg>
+        </div>
         <h3>Оставьте заявку</h3>
         <form class="popup_form">
           <div class="global_input popup_input">
             <input type="text" placeholder="Ваше имя" name="popupundefined" min="" max="" value=""/>
           </div>
           <div class="global_input popup_input">
-            <input type="number" placeholder="Ваш телефон" name="popupnumber" min="" max="" value=""/>
+            <input type="tel" placeholder="Ваш телефон" name="popuptel" min="" max="" value=""/>
           </div>
           <div class="btn">
             <button type="submit">Оставить заявку</button>
           </div>
           <div class="popup_policy">Отправляя форму, вы соглашаетесь с <a target="_blank" href="#">политикой конфиденциальности</a>.</div>
         </form>
+      </div>
+    </div>
+    <div class="burger"> 
+      <div class="burger_bg removePopup"> </div>
+      <div class="burger_main"> 
+        <div class="burger_close removePopup">
+          <svg class="icon icon-close ">
+            <use xlink:href="i/sprite/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="burger_logo"> <a href="#"><img src="i/global/logo.svg" alt=""></a></div>
+        <nav class="burger_nav"> 
+          <ul class="burger_nav_list"> 
+            <li class="removePopup"> <a href="#">Главная</a></li>
+            <li class="removePopup"> <a href="#">Каталог</a></li>
+            <li class="removePopup"> <a href="#">Статьи</a></li>
+            <li class="removePopup"> <a href="#">Отзывы</a></li>
+            <li class="removePopup"> <a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="header_phone"><a href="tel:+79969756919">+7 996 975 69 19</a></div>
+        <ul class="header_social"> 
+          <li> <a href="#"><img src="i/global/wa.svg" alt=""></a></li>
+          <li> <a href="#"><img src="i/global/vk.svg" alt=""></a></li>
+        </ul>
       </div>
     </div>
     <div class="succes">

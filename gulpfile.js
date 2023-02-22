@@ -195,6 +195,7 @@ var plugins = {
 			server: {
 				baseDir: outputDir,
 			},
+			tunnel: true,
 		},
 	},
 };

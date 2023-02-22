@@ -4,6 +4,10 @@ mixin btn(data)
 	.btn(class=data.class)
 		button(type=data.type ? data.type : type="button")=data.name ? data.name : 'Оставить заявку'
 
+mixin btn-link(data)
+	.btn(class=data.class)
+		a(href="/") Вернуться на главную
+
 // End
 
 // Card
@@ -41,7 +45,7 @@ mixin products(data)
 					.productsCard_txt 
 						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...
 				.productsCard_bottom 
-					a(href="#") Подробнее 
+					button(type="button") Подробнее 
 	else 
 		.productCard
 			a(href="#")  
@@ -64,7 +68,7 @@ mixin products(data)
 							span 1
 				.productsCard_bottom 
 					+btn({
-						class: 'productsCard_link',
+						class: 'productsCard_link btn',
 						name: 'Подробнее',
 					})
 					.productsCard_price 
@@ -80,3 +84,33 @@ mixin input(data)
 		input(type=data.type ? data.type : type="text" placeholder=data.place ? data.place : '' name=`${data.class}${data.type}` min=data.min ? data.min : '' max=data.max ? data.max : '' value=data.val ? data.val : '')
 
 // End
+
+// Header mixin 
+
+mixin header_mix(data)
+	header.header(class=data.theme) 
+		.section_in 
+			.header_main
+				.header_logo 
+					a(href="/")
+						img(src="i/global/logo.svg", alt="")
+				nav.header_nav 
+					ul
+						each item in ['Главная', 'Каталог', 'Статьи', 'Отзывы', 'Контакты']
+							li 
+								a(href="#")=item
+				.header_info 
+					ul.header_social 
+						each item in ['wa', 'vk']
+							li 
+								a(href="#")
+									img(src=`i/global/${item}.svg`, alt="")
+					.header_phone_w
+						.header_phone
+							a(href="tel:+79969756919") +7 996 975 69 19
+						.header_action.trigger
+							button(type="button") Перезвоните мне
+				.header_burger 
+					span 
+					span 
+					span 

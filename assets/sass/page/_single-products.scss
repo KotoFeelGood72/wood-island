@@ -1,0 +1,389 @@
+.singleProducts {
+}
+.section_in {
+}
+.singleProducts_head {
+	@include flex-start;
+	align-items: flex-start;
+	margin-bottom: $m10;
+	@include bp($point_2) {
+		flex-direction: column;
+		margin-bottom: 7rem;
+	}
+}
+.singleProducts_preview {
+	max-width: 87rem;
+	margin-right: 6rem;
+	@include bp($point_2) {
+		max-width: 100%;
+		margin: 0 0 4rem 0;
+	}
+}
+.singleProducts_slider {
+	position: relative;
+	height: 55.9rem;
+	border-radius: 3rem;
+	overflow: hidden;
+	margin-bottom: 2rem;
+	@include bp($point_2) {
+		max-height: 46rem;
+		border-radius: 1rem;
+	}
+	@include bp($point_5) {
+		max-height: 100%;
+		height: auto;
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.single_img {
+}
+.singleProducts_nav {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	@include flex-space;
+	z-index: 2;
+	max-width: 83rem;
+	@include bp($point_2) {
+		max-width: 90%
+	}
+
+	div {
+		@include flex-center;
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: 100%;
+		background-color: $green;
+		color: $white;
+		cursor: pointer;
+		@include bp($point_5) {
+			width: 3.5rem;
+			height: 3.5rem;
+		}
+
+		&.swiper-button-disabled {
+			background-color: $dark;
+			pointer-events: none;
+		}
+	}
+}
+.singleProudcts_nav_btn {
+}
+.prev_single {
+}
+.icon {
+}
+.icon-prev {
+}
+.next_single {
+}
+.icon-next {
+}
+.singleProducts_thumb_slider {
+	height: 10.3rem;
+	@include bp($point_5) {
+		height: 5rem;
+	}
+}
+
+.singleProducts_thumb {
+	height: 100%;
+	border-radius: 1rem;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	@include bp($point_5) {
+		border-radius: 0.5rem;
+	}
+	
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $dark;
+		content: '';
+		opacity: .5;
+		pointer-events: none;
+		transition: all .3s ease;
+	}
+	img {
+		height: 100%;
+		object-fit: cover;
+	}
+	
+}
+.singleProducts_thumb_slider {
+	user-select: none;
+	.swiper-slide-thumb-active {
+		.singleProducts_thumb {
+			&:before {
+				opacity: 0;
+			}
+		}
+	}
+}
+.singleProducts_params {
+	@include bp($point_2) {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+		width: 100%;
+	}
+	@include bp($point_5) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		grid-gap: 2rem;
+	}
+	ul {
+
+		&:first-child {
+			margin-bottom: 3rem;
+			padding-bottom: 4rem;
+			border-bottom: .1rem solid #46ACCC33;
+			@include bp($point_2) {
+				margin-bottom: 0;
+				padding-bottom: 0;
+				border: 0;
+			}
+			p {
+				margin-right: 1rem;
+			}
+			&>span {
+				font-family: $font_2;
+			}
+		}
+ 		li {
+			@include flex-start;
+			&:not(:last-child) {
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+}
+.singleProducts_price {
+	margin-bottom: 5rem;
+	@include bp($point_2) {
+		margin-bottom: 0;
+	}
+	li {
+		font-family: $font_2;
+		@include bp($point_2) {
+			@include flex-start;
+			flex-direction: column;
+			align-items: flex-start!important;
+		}
+		span {
+			color: $green;
+			font-size: 2.5rem;
+			font-family: $font_4;
+			@include bp($point_5) {
+				font-size: 2.2rem;
+			}
+		}
+		p {
+			margin-right: 2rem;
+			@include bp($point_5) {
+				margin: 0 0 .5rem 0;
+			}
+		}
+	}
+}
+.singleProducts_variant_btn {
+	.btn {
+		width: 100%;
+		margin-bottom: 2rem;
+		@include bp($point_2) {
+			margin-bottom: 2.5rem;
+		}
+		@include bp($point_5) {
+			margin-bottom: 1rem;
+		}
+		button {
+			width: inherit;
+			@include bp($point_2) {
+				padding: 1.3rem 2rem;
+			}
+		}
+	}
+}
+.btn {
+}
+.trigger_form {
+}
+.other_variant_btn {
+	a {
+		@include flex-center;
+		padding: 2.2rem 4rem;
+		border: .1rem solid #14141433;
+		border-radius: 5rem;
+		font-family: $font_2;
+		@include bp($point_2) {
+			padding: 1.3rem 2rem;
+		}
+	}
+}
+.singleProducts_description {
+	margin-bottom: $m10;
+	@include bp($point_2) {
+		margin-bottom: 7rem;
+	}
+}
+.singleProducts_complect {
+	margin-bottom: $m10;
+	@include bp($point_5) {
+		margin-bottom: 7rem;
+	}
+
+	h3 {
+		margin-bottom: 4rem;
+	}
+}
+.singleProducts_tab_link {
+	@include flex-start;
+	margin-bottom: 8rem;
+	@include bp($point_2) {
+		margin-bottom: 5rem;
+		flex-wrap: wrap;
+	}
+	@include bp($point_5) {
+		margin: -.5rem -.5rem 0 0;
+	}
+	li {
+		padding: 2.2rem 7rem;
+		color: $dark;
+		border: .1rem solid rgba(20, 20, 20, 0.2);
+		font-size: 2rem;
+		font-family: $font_2;
+		border-radius: 5rem;
+		cursor: pointer;
+		
+		@include bp($point_2) {
+			padding: 1.7rem 3rem;
+			font-size: 1.6rem;
+		}
+		@include bp($point_5) {
+			margin: .5rem .5rem 0 0;
+			padding: 1.3rem 2rem;
+			font-size: 1.4rem;
+		}
+		&:not(:last-child) {
+			margin-right: 3rem;
+			@include bp($point_2) {
+				margin-right: 2rem;
+			}
+			@include bp($point_5) {
+				margin-right: .5rem;
+			}
+		}
+		&.active_tab {
+			background-color: $dark;
+			color: $white;
+		}
+	}
+}
+.singleProducts_tab_w {
+	@include bp($point_5) {
+		margin-top: 3rem;
+	}
+}
+.singleProducts_tab_item {
+	&:not(.active_tab) {
+		display: none;
+	}
+	ul {
+		li {
+			@include flex-start;
+			padding: 3rem 7rem;
+			@include bp($point_2) {
+				padding: 2rem;
+				font-size: 1.4rem;
+			}
+			@include bp($point_5) {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			p {
+				flex: 1;
+				font-family: $font_3;
+				position: relative;
+				&:after {
+					@include bp($point_5) {
+						content: ':';
+					}
+				}
+				@include bp($point_5) {
+					margin-bottom: 1rem;
+					font-size: 1.8rem;
+				}
+			}
+			span {
+				max-width: 67rem;
+				text-align: left;
+				width: 100%;
+				@include bp($point_2) {
+					max-width: 70%;
+				}
+			}
+			&:nth-child(2n+ 1) {
+				background: rgba(20, 20, 20, 0.05);
+			}
+		}
+	}
+}
+
+.crossel_head {
+	@include flex-space;
+	@include bp($point_2) {
+		margin-bottom: 4rem;
+	}
+	.section_title {
+		@include bp($point_2) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.crossel_nav {
+	@include flex-end;
+	div {
+		@include flex-center;
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: 100%;
+		background-color: $green;
+		color: $white;
+		cursor: pointer;
+		@include bp($point_5) {
+			width: 3.5rem;
+			height: 3.5rem;
+		}
+		&:nth-child(1) {
+			margin-right: 2.5rem;
+			@include bp($point_5) {
+				margin-right: 1rem;
+			}
+		}
+		&.swiper-button-disabled {
+			opacity: .2;
+			pointer-events: none;
+		}
+	}
+}
+
+.crossel_main {
+	margin-bottom: $m10;
+	@include bp($point_5) {
+		margin-bottom: 5rem;
+	}
+}
+
+.crossel_slider {
+	padding-bottom: 5rem!important;
+}

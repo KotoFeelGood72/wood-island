@@ -14,12 +14,29 @@ let $body,
 
 $(document).ready(function ($) {
 	$body = $('body');
-	
+		if(devStatus) {
+		pageWidget(['index']);
+		pageWidget(['category']);
+		pageWidget(['404']);
+		pageWidget(['contacts']);
+		pageWidget(['news']);
+		pageWidget(['policy']);
+		pageWidget(['reviews']);
+		pageWidget(['shop']);
+		pageWidget(['single-news']);
+		pageWidget(['single-products']);
+		getAllClasses('html', '.elements_list');
+	}
 });
 
 $(window).on('load', function () {
 	updateSizes();
 	loadFunc();
+	standartPopup('.popup', '.removePopup', '.trigger');
+	standartPopup('.burger', '.removePopup', '.header_burger');
+	maps('Великий Новгород', 'Великий Новгород', [36, 49]);
+	visibleBtn();
+	hoverNavItem();
 });
 
 $(window).on('resize', function () {
@@ -106,117 +123,30 @@ console.info('%c%s', styles, message);
 
 
 
-// $(document).ready(function() {
-// 	const btns = document.querySelectorAll('.btn')
+$(document).ready(function() {
+	const btns = document.querySelectorAll('.btn')
 
-// 	btns.forEach(el => {
-// 			el.addEventListener('click', function(e) {
-// 					let
-// 							size = Math.max(this.offsetWidth, this.offsetHeight),
-// 							x = e.offsetX - size / 2,
-// 							y = e.offsetY - size / 2,
-// 							wave = this.querySelector('.wave')
+	btns.forEach(el => {
+			el.addEventListener('click', function(e) {
+					let
+							size = Math.max(this.offsetWidth, this.offsetHeight),
+							x = e.offsetX - size / 2,
+							y = e.offsetY - size / 2,
+							wave = this.querySelector('.wave')
 	
-// 					// Create an element if it doesn't exist
-// 					if (!wave) {
-// 							wave = document.createElement('span')
-// 							wave.className = 'wave'
-// 					}
-// 					wave.style.cssText = `width:${size}px;height:${size}px;top:${y}px;left:${x}px`
-// 					this.appendChild(wave)
-// 			})
-// 	})
-// })
+					// Create an element if it doesn't exist
+					if (!wave) {
+							wave = document.createElement('span')
+							wave.className = 'wave'
+					}
+					wave.style.cssText = `width:${size}px;height:${size}px;top:${y}px;left:${x}px`
+					this.appendChild(wave)
+			})
+	})
+})
 
 
 
-// const btnSubmit = document.querySelectorAll('button[type="submit"]')
-// Array.from(btnSubmit).map((item) => {
-// 	item.addEventListener('click', (e) => {
-// 		e.preventDefault();
-// 		succes('.succes')
-// 	})
-// })
-
-
-// function allDefautAnim(bottom = false, start = '-=30% center', end = 'bottom') {
-// 	const paralaxWrapper = Array.from(document.querySelectorAll('.sec_anim')).map(function(el) {
-// 		const arr = Array.from(el.querySelectorAll('.el_anim')).map(function (item, index) {
-// 			const tl = gsap.timeline();
-// 			ScrollTrigger.create({
-// 				animation: tl,
-// 				trigger: el,
-// 				start: start,
-// 				end: end,
-// 				ease: 'none',
-// 			})
-// 			tl.fromTo(item, {
-// 				y: 100, 
-// 				duration: .4,
-// 				autoAlpha: 0,
-// 			}, {
-// 				y: 0,
-// 				autoAlpha: 1,
-// 				delay: 0.1 + (0.1 * index),
-// 			});
-// 		});
-// 	});
-// }
-
-// function popupForms(pr) {
-
-// 	let popupForms = document.querySelector('.callback')
-// 	let popupFormsTrigger = document.querySelectorAll('.btn_popup')
-// 	let popupFormsClose = document.querySelectorAll('.remove_popup')
-// 	let popupFormsSubmit = popupForms.querySelector('button[type="submit"]')
-// 	const burgerPopup = document.querySelector('.burger')
-	
-// 	Array.from(popupFormsTrigger).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.add('active');
-// 			win.style.overflow = "hidden";
-// 			win.style.paddingRight = pr; 
-// 			burgerPopup.classList.remove('active')
-// 		})
-// 	})
-
-
-// 	Array.from(popupFormsClose).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.remove('active')
-// 			win.style.overflow = "";
-// 			win.style.paddingRight = ""; 
-// 		})
-// 	})
-
-// 	popupFormsSubmit.addEventListener('click', () => {
-// 		popupForms.classList.remove('active')
-// 		win.style.overflow = "";
-// 		win.style.paddingRight = ""; 
-// 		succes('.succes')
-// 	})
-// }
-
-// function burgerMobile() {
-// 	const triggerBurger = document.querySelector('.header_burger')
-// 	const burgerPopup = document.querySelector('.burger')
-// 	const burgerFail = document.querySelectorAll('.remove')
-	
-// 	triggerBurger.addEventListener('click', () => {
-// 		burgerPopup.classList.add('active')
-// 		triggerBurger.classList.add('active')
-// 		win.style.overflow = "hidden";
-// 	})
-
-// 	Array.from(burgerFail).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			burgerPopup.classList.remove('active')
-// 			triggerBurger.classList.remove('active')
-// 			win.style.overflow = "";
-// 		})
-// 	})
-
-// }
 
 
 
@@ -235,36 +165,36 @@ $(document).ready(function()  {
 
 
 
-// async function maps(street, city, size) {
+async function maps(street, city, size) {
 
-// 	function init() {
-// 		const geocoder = ymaps.geocode(`${street} ${city}`);
-// 		geocoder.then(
-// 			async function (res) {
-// 				var myMapMobile = await new ymaps.Map('map', {
-// 						center: res.geoObjects.get(0).geometry.getCoordinates(),
-// 						zoom: 16,
-// 					}, {
-// 						searchControlProvider: 'yandex#search'
-// 					}),
-// 					myPlacemark = new ymaps.Placemark(myMapMobile.getCenter(), {
-// 						balloonContent: `${street} ${city}`
-// 					}, {
-// 						iconLayout: 'default#image',
-// 						iconImageHref: '/i/global/map.svg',
-// 						iconImageSize: size,
-// 						iconImageOffset: [-5, -38]
-// 					});
+	function init() {
+		const geocoder = ymaps.geocode(`${street} ${city}`);
+		geocoder.then(
+			async function (res) {
+				var myMapMobile = await new ymaps.Map('map', {
+						center: res.geoObjects.get(0).geometry.getCoordinates(),
+						zoom: 16,
+					}, {
+						searchControlProvider: 'yandex#search'
+					}),
+					myPlacemark = new ymaps.Placemark(myMapMobile.getCenter(), {
+						balloonContent: `${street} ${city}`
+					}, {
+						iconLayout: 'default#image',
+						iconImageHref: '/i/global/map.svg',
+						iconImageSize: size,
+						iconImageOffset: [-5, -38]
+					});
 
-// 				myMapMobile.geoObjects
-// 					.add(myPlacemark)
-// 				myMapMobile.behaviors.disable('scrollZoom')
-// 			}
-// 		);
-// 	}
-// 	await ymaps.ready(init);
+				myMapMobile.geoObjects
+					.add(myPlacemark)
+				myMapMobile.behaviors.disable('scrollZoom')
+			}
+		);
+	}
+	await ymaps.ready(init);
 
-// }
+}
 
 
 
@@ -275,17 +205,20 @@ const aboutSlider = new Swiper('.about_slider', {
 		nextEl: '.next',
 		prevEl: '.prev'
 	},
+	scrollbar: {
+		el: '.aboutSlider_scrollbar'
+	},
 	breakpoints: {
 		320: {
-			slidesPerView: 1.5,
+			slidesPerView: 1,
 			spaceBetween: 21
 		},
 		768: {
-			slidesPerView: 1.5,
+			slidesPerView: 2,
 			spaceBetween: 21
 		},
 		1024: {
-			slidesPerView: 1.5,
+			slidesPerView: 2,
 			spaceBetween: 21
 		},
 		1200: {
@@ -298,12 +231,171 @@ const aboutSlider = new Swiper('.about_slider', {
 
 
 
+$(function () {
+
+	if($('.singleproducts_gallery')) {
+
+		var galleryThumbs = new Swiper(".singleProducts_thumb_slider", {
+			spaceBetween: 18,
+			slidesPerView: 4,
+			freeMode: false,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			watchOverflow: true,
+			// breakpoints: {
+			// 	480: {
+			// 		slidesPerView: 2
+			// 	},
+			// 	768: {
+			// 		slidesPerView: 3
+			// 	},
+			// 	1200: {
+			// 		slidesPerView: 5
+			// 	}
+			// },
+		});
+		var galleryTop = new Swiper(".singleProducts_slider", {
+			direction: "horizontal",
+			spaceBetween: 10,
+			a11y: {
+				prevSlideMessage: "Предыдущий слайд",
+				nextSlideMessage: "Следущий слайд",
+			},
+			navigation: {
+				nextEl: '.next_single',
+				prevEl: '.prev_single'
+			},
+			keyboard: {
+				enabled: true,
+			},
+			thumbs: {
+				swiper: galleryThumbs
+			},
+		});
+	}
+});
+
+
+
+
+
+const crosselSlider = new Swiper('.crossel_slider', {
+	navigation: {
+		nextEl: '.next_cross',
+		prevEl: '.prev_cross'
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 30
+		},
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 30
+		},
+		1024: {
+			slidesPerView: 3,
+			spaceBetween: 30
+		},
+		1200: {
+			slidesPerView: 3,
+			spaceBetween: 30
+		}
+	}
+})
+
+function standartPopup(popups, closes, trigger) {
+	let btn =  document.querySelectorAll(trigger)
+	let popup = document.querySelector(popups)
+	let remove = popup.querySelectorAll(closes)
+	let blocked = document.body
+
+
+
+
+	function openPopup() {
+		popup.classList.add('active')
+		blocked.classList.add('hidden')
+	}
+
+	function removePopup() {
+		popup.classList.remove('active')
+		blocked.classList.remove('hidden')
+	}
+
+
+	btn.forEach(item => {
+		item.addEventListener('click', function() {
+			openPopup();
+		})
+	});
+
+
+	remove.forEach(item => {
+		item.addEventListener('click', function() {
+			removePopup();
+		})
+	});
+}
+
+
+// tabs
+function tabs(link, block) {
+	let linkSelector = $(link),
+		blockSelector = $(block);
+
+	$(linkSelector).on('click', function (e) {
+		e.preventDefault();
+
+		let $this = $(this),
+			currentData = $(this).data('tab');
+
+		$(blockSelector).removeClass('active_tab');
+		$(linkSelector).removeClass('active_tab');
+
+		$(block + '[data-tab="' + currentData + '"]').addClass('active_tab');
+		$this.addClass('active_tab');
+
+	});
+}
+
+tabs('.singleProducts_tab_link>li', '.singleProducts_tab_item');
+
+
+
+function visibleBtn() {
+	const count = document.querySelectorAll('.reviews_item_txt')
+	
+	Array.from(count).map((item) => {
+		const btnShow = document.querySelector('.reviews_item_more')
+		const current = item.innerHTML.length
+		if(current <= 90) {
+			item.nextElementSibling.style="display: none"
+		}
+
+		item.nextElementSibling.addEventListener('click', function() {
+			item.classList.toggle('active')
+			this.style="display: none"
+		})
+	})
+}
 
 
 
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+	loader();
+})
+function loader() {
+	let loader = document.querySelector('.loader')
+
+	
+	setTimeout(() => {
+		loader.classList.add('is-hidden')
+	}, 100)
+}
 
 
 

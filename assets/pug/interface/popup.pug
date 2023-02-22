@@ -1,7 +1,8 @@
 .popup
-	.popup_bg.popup_close 
+	.popup_bg.popup_close.removePopup
 	.popup_main
-		.popup_closeBtn.popup_close
+		.popup_close.removePopup
+			+icon('close')
 		h3 Оставьте заявку
 		form.popup_form
 			+input({
@@ -11,10 +12,32 @@
 			+input({
 				class: 'popup',
 				place: 'Ваш телефон',
-				type: 'number'
+				type: 'tel'
 			})
 			+btn({
 				name: 'Оставить заявку',
 				type: 'submit'
 			})
 			.popup_policy!='Отправляя форму, вы соглашаетесь с <a target="_blank" href="#">политикой конфиденциальности</a>.'
+
+
+.burger 
+	.burger_bg.removePopup 
+	.burger_main 
+		.burger_close.removePopup
+			+icon('close')
+		.burger_logo 
+			a(href="#")
+				img(src="i/global/logo.svg", alt="")
+		nav.burger_nav 
+			ul.burger_nav_list 
+				each item in ['Главная', 'Каталог', 'Статьи', 'Отзывы', 'Контакты']
+					li.removePopup 
+						a(href="#")=item
+		.header_phone
+			a(href="tel:+79969756919") +7 996 975 69 19
+		ul.header_social 
+			each item in ['wa', 'vk']
+				li 
+					a(href="#")
+						img(src=`i/global/${item}.svg`, alt="")

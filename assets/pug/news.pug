@@ -1,12 +1,12 @@
 extends _layout
 
 block vars
-	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Статьи - Wood Island'}
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Статьи - Wood Island', mode: 'dark'}
 block content_block
 	+breadcrumb(['Главная'], 'Статьи')
 	section.news 
 		.section_in
-			ul.shop_grid.news_grid_mod
+			ul.shop_grid.news_grid_mod.popularNews_grid
 				-for(i = 0; i < 6; i++)
 					li.shop_item
 						+products({

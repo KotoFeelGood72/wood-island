@@ -97,7 +97,7 @@ input,
 textarea {
 	border-radius: 0;
 	box-sizing: border-box;
-
+	color: $input_text_color;
 	&::-webkit-input-placeholder {
 		color: $input_placeholder_color;
 	}

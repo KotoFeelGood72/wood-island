@@ -7,10 +7,11 @@ include templates/_project_mixins
 block vars
 doctype
 html(lang="en")
+	include interface/loader
 	head
 		+head(array)
 	body(class= array.body_class)
-		include interface/header
+		+header_mix({theme: array.mode})
 		.wrapper(class= array.layout_mod)
 			.base(class= array.layout_mod)
 				block content_block

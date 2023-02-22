@@ -10,8 +10,10 @@
 <!-- Products-->
 <!-- End-->
 <!-- Input-->
-<!-- End--><!DOCTYPE html>
+<!-- End-->
+<!-- Header mixin --><!DOCTYPE html>
 <html lang="en">
+  <div class="loader"></div>
   <head>
     <meta charset="UTF-8"/>
     <title>Каркасные дома - Название дома - Wood Island</title>
@@ -22,10 +24,10 @@
     <link rel="stylesheet" media="all" href="styles/main_global.css"/>
   </head>
   <body>
-    <header class="header"> 
+    <header class="header dark"> 
       <div class="section_in"> 
         <div class="header_main">
-          <div class="header_logo"> <a href="#"><img src="i/global/logo.svg" alt=""></a></div>
+          <div class="header_logo"> <a href="/"><img src="i/global/logo.svg" alt=""/></a></div>
           <nav class="header_nav"> 
             <ul>
               <li> <a href="#">Главная</a></li>
@@ -37,36 +39,39 @@
           </nav>
           <div class="header_info"> 
             <ul class="header_social"> 
-              <li> <a href="#"><img src="i/global/wa.svg" alt=""></a></li>
-              <li> <a href="#"><img src="i/global/vk.svg" alt=""></a></li>
+              <li> <a href="#"><img src="i/global/wa.svg" alt=""/></a></li>
+              <li> <a href="#"><img src="i/global/vk.svg" alt=""/></a></li>
             </ul>
             <div class="header_phone_w">
               <div class="header_phone"><a href="tel:+79969756919">+7 996 975 69 19</a></div>
-              <div class="header_action trigger_form">
+              <div class="header_action trigger">
                 <button type="button">Перезвоните мне</button>
               </div>
             </div>
           </div>
+          <div class="header_burger"> <span> </span><span> </span><span> </span></div>
         </div>
       </div>
     </header>
     <div class="wrapper">
       <div class="base">
         <div class="breadcrumb">
-          <ul class="breadcrumb__list">
-            <li class="breadcrumb__item">
-              <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Главная">Главная</a>
-            </li>
-            <li class="breadcrumb__item">
-              <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Каталог">Каталог</a>
-            </li>
-            <li class="breadcrumb__item">
-              <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Каркасные дома">Каркасные дома</a>
-            </li>
-            <li class="breadcrumb__item"><span class="breadcrumb__link-current">Название дома</span></li>
-          </ul>
-          <div class="page_title"> 
-            <h1>Название дома</h1>
+          <div class="section_in">
+            <ul class="breadcrumb__list">
+              <li class="breadcrumb__item">
+                <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Главная">Главная</a>
+              </li>
+              <li class="breadcrumb__item">
+                <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Каталог">Каталог</a>
+              </li>
+              <li class="breadcrumb__item">
+                <!-- if breadcrumb is single--><a class="breadcrumb__link" href="#" title="Каркасные дома">Каркасные дома</a>
+              </li>
+              <li class="breadcrumb__item"><span class="breadcrumb__link-current">Название дома</span></li>
+            </ul>
+            <div class="page_title"> 
+              <h1>Название дома</h1>
+            </div>
           </div>
         </div>
         <section class="singleProducts"> 
@@ -113,12 +118,12 @@
                     </div>
                   </div>
                   <div class="singleProducts_nav"> 
-                    <div class="singleProudcts_nav_btn prev_single">
+                    <div class="singleProudcts_nav_btn prev_single btn">
                       <svg class="icon icon-prev ">
                         <use xlink:href="i/sprite/sprite.svg#prev"></use>
                       </svg>
                     </div>
-                    <div class="singleProudcts_nav_btn next_single"> 
+                    <div class="singleProudcts_nav_btn next_single btn"> 
                       <svg class="icon icon-next ">
                         <use xlink:href="i/sprite/sprite.svg#next"></use>
                       </svg>
@@ -190,27 +195,71 @@
                   </li>
                 </ul>
                 <div class="singleProducts_variant_btn"> 
-                  <div class="btn trigger_form">
+                  <div class="btn trigger">
                     <button type="button">Заказать</button>
                   </div>
                   <div class="other_variant_btn"> <a href="#">Вариант из бруса</a></div>
                 </div>
               </div>
             </div>
-            <div class="singleProducts_description"> 
+            <div class="singleProducts_description global_txt"> 
               <h2>Описание</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+              <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
             <div class="singleProducts_complect"> 
               <h3>Комплектации</h3>
               <ul class="singleProducts_tab_link"> 
-                <li data-link="complect_0">Под ключ</li>
-                <li data-link="complect_1">Без отделки</li>
-                <li data-link="complect_2">Рекомендации к проекту</li>
+                <li class="active_tab btn" data-tab="complect_0">Под ключ</li>
+                <li class="btn" data-tab="complect_1">Без отделки</li>
+                <li class="btn" data-tab="complect_2">Рекомендации к проекту</li>
               </ul>
-              <ul class="singleProducts_tab_w"> 
-                <li class="singleProducts_tab_item" data-tab="complect_3">
+              <ul class="singleProducts_tab_w">
+                <li class="singleProducts_tab_item active_tab" data-tab="complect_0">
+                  <ul> 
+                    <li> 
+                      <p>Фундамент</p><span>Обсчитывается отдельно. Смотрите рекомендации к проекту</span>
+                    </li>
+                    <li> 
+                      <p>Гидроизоляция</p><span>Рубероид в 2 слоя</span>
+                    </li>
+                    <li> 
+                      <p>Высота 1-го этажа</p><span>2,50м.(допуски по высоте: +-50мм.)</span>
+                    </li>
+                    <li> 
+                      <p>Основание 2-е</p><span>Первый ряд: брус 150х150мм. и перемычки 100х150мм. – камерной сушки. Второй ряд: брус 100х150мм. и перемычки 100х150мм. – камерной сушки. Обрабатывается Антисептиком.</span>
+                    </li>
+                    <li> 
+                      <p>Лаги 1-го этажа</p><span>Доска 50х150мм. – камерной сушки, на ребро с шагом 590мм. Обрабатывается Антисептиком.</span>
+                    </li>
+                    <li> 
+                      <p>Черновой пол 1-го этажа</p><span>Брусок 40х50мм. - камерной сушки. На него закладывается черновой пол: обрезная доска 22х100мм. – камерной сушки. Обрабатывается Антисептиком.</span>
+                    </li>
+                  </ul>
+                </li>
+                <li class="singleProducts_tab_item" data-tab="complect_1">
+                  <ul> 
+                    <li> 
+                      <p>Фундамент</p><span>Обсчитывается отдельно. Смотрите рекомендации к проекту</span>
+                    </li>
+                    <li> 
+                      <p>Гидроизоляция</p><span>Рубероид в 2 слоя</span>
+                    </li>
+                    <li> 
+                      <p>Высота 1-го этажа</p><span>2,50м.(допуски по высоте: +-50мм.)</span>
+                    </li>
+                    <li> 
+                      <p>Основание 2-е</p><span>Первый ряд: брус 150х150мм. и перемычки 100х150мм. – камерной сушки. Второй ряд: брус 100х150мм. и перемычки 100х150мм. – камерной сушки. Обрабатывается Антисептиком.</span>
+                    </li>
+                    <li> 
+                      <p>Лаги 1-го этажа</p><span>Доска 50х150мм. – камерной сушки, на ребро с шагом 590мм. Обрабатывается Антисептиком.</span>
+                    </li>
+                    <li> 
+                      <p>Черновой пол 1-го этажа</p><span>Брусок 40х50мм. - камерной сушки. На него закладывается черновой пол: обрезная доска 22х100мм. – камерной сушки. Обрабатывается Антисептиком.</span>
+                    </li>
+                  </ul>
+                </li>
+                <li class="singleProducts_tab_item" data-tab="complect_2">
                   <ul> 
                     <li> 
                       <p>Фундамент</p><span>Обсчитывается отдельно. Смотрите рекомендации к проекту</span>
@@ -244,12 +293,12 @@
                   <h4>Смотрите также</h4>
                 </div>
                 <div class="crossel_nav"> 
-                  <div class="crossel_nav_btn prev_cross"> 
+                  <div class="crossel_nav_btn prev_cross btn"> 
                     <svg class="icon icon-prev ">
                       <use xlink:href="i/sprite/sprite.svg#prev"></use>
                     </svg>
                   </div>
-                  <div class="crossel_nav_btn next_cross"> 
+                  <div class="crossel_nav_btn next_cross btn"> 
                     <svg class="icon icon-next ">
                       <use xlink:href="i/sprite/sprite.svg#next"></use>
                     </svg>
@@ -281,7 +330,7 @@
                               </ul>
                             </div>
                             <div class="productsCard_bottom"> 
-                              <div class="btn productsCard_link">
+                              <div class="btn productsCard_link btn">
                                 <button type="button">Подробнее</button>
                               </div>
                               <div class="productsCard_price"> 
@@ -312,7 +361,7 @@
                               </ul>
                             </div>
                             <div class="productsCard_bottom"> 
-                              <div class="btn productsCard_link">
+                              <div class="btn productsCard_link btn">
                                 <button type="button">Подробнее</button>
                               </div>
                               <div class="productsCard_price"> 
@@ -343,7 +392,7 @@
                               </ul>
                             </div>
                             <div class="productsCard_bottom"> 
-                              <div class="btn productsCard_link">
+                              <div class="btn productsCard_link btn">
                                 <button type="button">Подробнее</button>
                               </div>
                               <div class="productsCard_price"> 
@@ -374,7 +423,7 @@
                               </ul>
                             </div>
                             <div class="productsCard_bottom"> 
-                              <div class="btn productsCard_link">
+                              <div class="btn productsCard_link btn">
                                 <button type="button">Подробнее</button>
                               </div>
                               <div class="productsCard_price"> 
@@ -405,7 +454,7 @@
                               </ul>
                             </div>
                             <div class="productsCard_bottom"> 
-                              <div class="btn productsCard_link">
+                              <div class="btn productsCard_link btn">
                                 <button type="button">Подробнее</button>
                               </div>
                               <div class="productsCard_price"> 
@@ -436,7 +485,7 @@
                               </ul>
                             </div>
                             <div class="productsCard_bottom"> 
-                              <div class="btn productsCard_link">
+                              <div class="btn productsCard_link btn">
                                 <button type="button">Подробнее</button>
                               </div>
                               <div class="productsCard_price"> 
@@ -522,22 +571,51 @@
     <script src="js/menu.js"></script>
     <script src="js/main.js"></script>
     <div class="popup">
-      <div class="popup_bg popup_close"> </div>
+      <div class="popup_bg popup_close removePopup"></div>
       <div class="popup_main">
-        <div class="popup_closeBtn popup_close"></div>
+        <div class="popup_close removePopup">
+          <svg class="icon icon-close ">
+            <use xlink:href="i/sprite/sprite.svg#close"></use>
+          </svg>
+        </div>
         <h3>Оставьте заявку</h3>
         <form class="popup_form">
           <div class="global_input popup_input">
             <input type="text" placeholder="Ваше имя" name="popupundefined" min="" max="" value=""/>
           </div>
           <div class="global_input popup_input">
-            <input type="number" placeholder="Ваш телефон" name="popupnumber" min="" max="" value=""/>
+            <input type="tel" placeholder="Ваш телефон" name="popuptel" min="" max="" value=""/>
           </div>
           <div class="btn">
             <button type="submit">Оставить заявку</button>
           </div>
           <div class="popup_policy">Отправляя форму, вы соглашаетесь с <a target="_blank" href="#">политикой конфиденциальности</a>.</div>
         </form>
+      </div>
+    </div>
+    <div class="burger"> 
+      <div class="burger_bg removePopup"> </div>
+      <div class="burger_main"> 
+        <div class="burger_close removePopup">
+          <svg class="icon icon-close ">
+            <use xlink:href="i/sprite/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="burger_logo"> <a href="#"><img src="i/global/logo.svg" alt=""></a></div>
+        <nav class="burger_nav"> 
+          <ul class="burger_nav_list"> 
+            <li class="removePopup"> <a href="#">Главная</a></li>
+            <li class="removePopup"> <a href="#">Каталог</a></li>
+            <li class="removePopup"> <a href="#">Статьи</a></li>
+            <li class="removePopup"> <a href="#">Отзывы</a></li>
+            <li class="removePopup"> <a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="header_phone"><a href="tel:+79969756919">+7 996 975 69 19</a></div>
+        <ul class="header_social"> 
+          <li> <a href="#"><img src="i/global/wa.svg" alt=""></a></li>
+          <li> <a href="#"><img src="i/global/vk.svg" alt=""></a></li>
+        </ul>
       </div>
     </div>
     <div class="succes">

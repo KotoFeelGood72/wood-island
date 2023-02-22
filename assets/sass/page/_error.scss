@@ -1,0 +1,21 @@
+.error {
+}
+.section_in {
+}
+.error_main {
+	padding: 19.5rem 0 31.6rem 0;
+	@include flex-center;
+	flex-direction: column;
+
+	h1 {
+		margin-bottom: 1rem;
+	}
+	p {
+		margin-bottom: 6rem;
+		font-size: 1.8rem;
+	}
+}
+.btn {
+}
+.btn_back {
+}

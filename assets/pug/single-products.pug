@@ -1,7 +1,7 @@
 extends _layout
 
 block vars
-	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Каркасные дома - Название дома - Wood Island'}
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Каркасные дома - Название дома - Wood Island', mode: 'dark'}
 block content_block
 	+breadcrumb(['Главная', 'Каталог', 'Каркасные дома'], 'Название дома')
 	section.singleProducts 
@@ -15,9 +15,9 @@ block content_block
 									.single_img 
 										img(src="i/cat/product.jpg", alt="")
 						.singleProducts_nav 
-							.singleProudcts_nav_btn.prev_single
+							.singleProudcts_nav_btn.prev_single.btn
 								+icon('prev')
-							.singleProudcts_nav_btn.next_single 
+							.singleProudcts_nav_btn.next_single.btn 
 								+icon('next')
 					.singleProducts_thumb_slider.swiper 
 						.swiper-wrapper
@@ -42,55 +42,94 @@ block content_block
 							span 14 000 000 ₽
 					.singleProducts_variant_btn 
 						+btn({
-							class: 'trigger_form',
+							class: 'trigger',
 							name: 'Заказать'
 						})
 						.other_variant_btn 
 							a(href="#") Вариант из бруса
-			.singleProducts_description 
+			.singleProducts_description.global_txt 
 				h2 Описание
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+				p  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			.singleProducts_complect 
 				h3 Комплектации
 				ul.singleProducts_tab_link 
 					-for(i = 0; i < 3; i++)
 						- let link = ['Под ключ', 'Без отделки', 'Рекомендации к проекту']
-							li(data-link=`complect_${i}`)=link[i]
-				ul.singleProducts_tab_w 
-					li.singleProducts_tab_item(data-tab=`complect_${i}`)
-						ul 
-							-
-								let lists = [
-									{
-										title: 'Фундамент',
-										txt: 'Обсчитывается отдельно. Смотрите рекомендации к проекту'
-									},
-									{
-										title: 'Гидроизоляция',
-										txt: 'Рубероид в 2 слоя'
-									},
-									{
-										title: 'Высота 1-го этажа',
-										txt: '2,50м.(допуски по высоте: +\-50мм.)'
-									},
-									{
-										title: 'Основание 2-е',
-										txt: 'Первый ряд: брус 150х150мм. и перемычки 100х150мм. – камерной сушки. Второй ряд: брус 100х150мм. и перемычки 100х150мм. – камерной сушки. Обрабатывается Антисептиком.'
-									},
-									{
-										title: 'Лаги 1-го этажа',
-										txt: 'Доска 50х150мм. – камерной сушки, на ребро с шагом 590мм. Обрабатывается Антисептиком.'
-									},
-									{
-										title: 'Черновой пол 1-го этажа',
-										txt: 'Брусок 40х50мм. - камерной сушки. На него закладывается черновой пол: обрезная доска 22х100мм. – камерной сушки. Обрабатывается Антисептиком.'
-									},
-								] 
-							each item in lists 
-								li 
-									p=item.title 
-									span=item.txt 
+							if i === 0
+								li(data-tab=`complect_${i}` class="active_tab btn")=link[i]
+							else 
+								li(data-tab=`complect_${i}` class="btn")=link[i]
+				ul.singleProducts_tab_w
+					-for(idx = 0; idx < 3; idx++)
+						if idx === 0
+							li.singleProducts_tab_item(data-tab=`complect_${idx}` class="active_tab")
+								ul 
+									-
+										let lists = [
+											{
+												title: 'Фундамент',
+												txt: 'Обсчитывается отдельно. Смотрите рекомендации к проекту'
+											},
+											{
+												title: 'Гидроизоляция',
+												txt: 'Рубероид в 2 слоя'
+											},
+											{
+												title: 'Высота 1-го этажа',
+												txt: '2,50м.(допуски по высоте: +\-50мм.)'
+											},
+											{
+												title: 'Основание 2-е',
+												txt: 'Первый ряд: брус 150х150мм. и перемычки 100х150мм. – камерной сушки. Второй ряд: брус 100х150мм. и перемычки 100х150мм. – камерной сушки. Обрабатывается Антисептиком.'
+											},
+											{
+												title: 'Лаги 1-го этажа',
+												txt: 'Доска 50х150мм. – камерной сушки, на ребро с шагом 590мм. Обрабатывается Антисептиком.'
+											},
+											{
+												title: 'Черновой пол 1-го этажа',
+												txt: 'Брусок 40х50мм. - камерной сушки. На него закладывается черновой пол: обрезная доска 22х100мм. – камерной сушки. Обрабатывается Антисептиком.'
+											},
+										] 
+									each item in lists 
+										li 
+											p=item.title 
+											span=item.txt 
+						else 
+							li.singleProducts_tab_item(data-tab=`complect_${idx}`)
+								ul 
+									-
+										let lists = [
+											{
+												title: 'Фундамент',
+												txt: 'Обсчитывается отдельно. Смотрите рекомендации к проекту'
+											},
+											{
+												title: 'Гидроизоляция',
+												txt: 'Рубероид в 2 слоя'
+											},
+											{
+												title: 'Высота 1-го этажа',
+												txt: '2,50м.(допуски по высоте: +\-50мм.)'
+											},
+											{
+												title: 'Основание 2-е',
+												txt: 'Первый ряд: брус 150х150мм. и перемычки 100х150мм. – камерной сушки. Второй ряд: брус 100х150мм. и перемычки 100х150мм. – камерной сушки. Обрабатывается Антисептиком.'
+											},
+											{
+												title: 'Лаги 1-го этажа',
+												txt: 'Доска 50х150мм. – камерной сушки, на ребро с шагом 590мм. Обрабатывается Антисептиком.'
+											},
+											{
+												title: 'Черновой пол 1-го этажа',
+												txt: 'Брусок 40х50мм. - камерной сушки. На него закладывается черновой пол: обрезная доска 22х100мм. – камерной сушки. Обрабатывается Антисептиком.'
+											},
+										] 
+									each item in lists 
+										li 
+											p=item.title 
+											span=item.txt 
 	section.crossel
 		.section_in 
 			.crossel_main
@@ -98,9 +137,9 @@ block content_block
 					.section_title 
 						h4 Смотрите также
 					.crossel_nav 
-						.crossel_nav_btn.prev_cross 
+						.crossel_nav_btn.prev_cross.btn 
 							+icon('prev')
-						.crossel_nav_btn.next_cross 
+						.crossel_nav_btn.next_cross.btn 
 							+icon('next')
 				.crossel_slider_w 
 					.crossel_slider.swiper 

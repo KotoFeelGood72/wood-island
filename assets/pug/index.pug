@@ -17,7 +17,7 @@ block content_block
 								p=item
 								span область
 				+btn({
-					class: 'hero_btn',
+					class: 'hero_btn trigger',
 				})
 	section.typeHome 
 		.section_in 
@@ -73,7 +73,7 @@ block content_block
 					})
 					.action_form_bottom
 						+btn({
-							type: 'submit'
+							type: 'submit',
 						})
 						.action_policy!='Отправляя форму, вы соглашаетесь с <a href="/policy/">Политика конфиденциальности</a>'
 	section.about 
@@ -92,13 +92,13 @@ block content_block
 								.swiper-slide 
 									.about_slide 
 										img(src="i/cat/product.jpg", alt="")
-					.about_bottomNav 
+					.about_bottomNav
 						.aboutSlider_nav 
-							.about_slider_next.next 
-								+icon('next')
-							.about_slider_prev.prev 
+							.about_slider_prev.prev.btn 
 								+icon('prev')
-						.aboutSlider_scrollbar
+							.about_slider_next.next.btn 
+								+icon('next')
+						.aboutSlider_scrollbar.swiper-scrollbar
 	section.homenews 
 		.section_in 
 			.section_head 
@@ -107,7 +107,7 @@ block content_block
 				.section_btn_more 
 					a(href="#") Показать все
 			ul.popularNews_grid
-				-for(i = 0; i < 4; i++)
+				-for(i = 0; i < 3; i++)
 					+products({
 							news: true,
 						})

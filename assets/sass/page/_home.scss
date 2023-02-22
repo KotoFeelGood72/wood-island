@@ -6,6 +6,12 @@
 	margin-top: - $header;
 	padding: 25.1rem 0 31.9rem 0;
 	margin-bottom: $m10;
+	@include bp($point_2) {
+		padding: 20rem 0;
+	}
+	@include bp($point_5) {
+		padding: 15rem 0;
+	}
 	* {
 		color: $white;
 	}
@@ -26,13 +32,20 @@
 }
 .hero_title {
 	max-width: 76rem;
+	@include bp($point_2) {
+		max-width: 50rem;
+	}
 }
 .hero_serviceList {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
 	grid-gap: 4rem;
 	max-width: 75rem;
-	margin: 5rem 0 7rem 0
+	margin: 5rem 0 7rem 0;
+	@include bp($point_5) {
+		grid-gap: 2rem;
+		margin: 3.5rem 0;
+	}
 }
 .hero_serviceItem {
 	@include flex-start;
@@ -62,8 +75,15 @@
 .section_head {
 	@include flex-space;
 	margin-bottom: 4rem;
+	@include bp($point_5) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 	.section_title {
 		margin-bottom: 0!important;
+		@include bp($point_5) {
+			margin-bottom: 1rem!important;
+		}
 	}
 }
 .section_title {
@@ -74,6 +94,9 @@
 		font-size: 1.8rem;
 		font-family: $font_2;
 		padding-bottom: 0.3rem;
+		@include bp($point_5) {
+			font-size: 1.6rem;
+		}
 	}
 }
 .typeHome_list {
@@ -81,6 +104,9 @@
 	grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
 	grid-gap: 3rem; 
 	margin-bottom: $m15;
+	@include bp($point_2) {
+		margin-bottom: $m10;
+	}
 
 	li {
 		position: relative;
@@ -88,6 +114,10 @@
 		border-radius: 3rem;
 		height: 42.9rem;
 		padding: 6rem 6rem 5rem 6rem;
+		@include bp($point_2) {
+			padding: 3rem 2rem;
+			height: auto;
+		}
 		* {
 			color: $white;
 		}
@@ -112,13 +142,29 @@
 	}
 }
 .card_cat {
-}
+	@include bp($point_2) {
+		min-height: 33rem;
+		@include flex-space;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+} 
 .card_cat_head {
 	@include flex-space;
 	margin-bottom: 13.6rem;
+	// @include bp($point_2) {
+	// 	flex-direction: column;
+	// }
+	@include bp($point_5) {
+		width: 100%;
+	}
 	h3 {
 		font-size: 3.5rem;
 		margin-right: 7rem;
+		@include bp($point_2) {
+			font-size: 2rem;
+			// margin: 0 0 2rem 0;
+		}
 	}
 }
 .card_count {
@@ -129,6 +175,10 @@
 	font-size: 1.8rem;
 	text-align: center;
 	max-width: 15rem;
+	@include bp($point_2) {
+		font-size: 1.2rem;
+		padding: .7rem 1rem;
+	}
 	&:after {
 		content: 'проектов';
 		padding-left: 0.3rem;
@@ -163,6 +213,9 @@
 }
 .popular_main {
 	margin-bottom: $m15;
+	@include bp($point_2) {
+		margin-bottom: $m10;
+	}
 }
 .popular_list {
 }
@@ -170,6 +223,9 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
 	grid-gap: 6rem 3rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+	}
 }
 .productCard {
 }
@@ -178,6 +234,7 @@
 	overflow: hidden;
 	width: 100%;
 	height: 27rem;
+	position: relative;
 	img {
 		height: 100%;
 		object-fit: cover;
@@ -185,11 +242,17 @@
 }
 .productsCard_content {
 	padding: 1.5rem 0 2rem 0;
+	@include bp($point_5) {
+		padding: 1rem 0;
+	}
 
 	h3 {
 		font-size: 2.2rem;
 		font-family: $font_2;
 		margin-bottom: 2rem;
+		@include bp($point_2) {
+			font-size: 2rem;
+		}
 	}
 }
 .productsCard_params {
@@ -198,8 +261,14 @@
 	grid-gap: 1.5rem 5rem;
 	padding-bottom: 2rem;
 	border-bottom: .1rem solid rgba(70, 172, 204, 0.2);
+	@include bp($point_2) {
+		grid-gap: 1rem;
+	}
 	* {
 		font-size: 1.8rem;
+		@include bp($point_2) {
+			font-size: 1.4rem;
+		}
 	}
 	li {
 		@include flex-start;
@@ -213,12 +282,33 @@
 }
 .productsCard_bottom {
 	@include flex-start;
+	@include bp($point_2) {
+		justify-content: space-between;
+	}
+	button {
+		font-size: 1.8rem;
+		color: $green;
+		font-family: $font_2;
+		border-bottom: .1rem dashed $green;
+		line-height: 2.4rem;
+		@include bp($point_2) {
+			font-size: 1.6rem;
+		}
+	}
 }
 .productsCard_link {
 	margin-right: 2.5rem;
+	// @include bp($point_2) {
+	// 	order: 2;
+	// }
 	button {
 		font-size: 1.8rem;
 		padding: 1.8rem 4.3rem;
+		color: $white;
+		@include bp($point_2) {
+			font-size: 1.6rem;
+			padding: 1.5rem 3rem;
+		}
 	}
 }
 .productsCard_price {
@@ -226,6 +316,9 @@
 		font-size: 2.5rem;
 		font-family: $font_4;
 		color: $green;
+		@include bp($point_2) {
+			font-size: 2rem;
+		}
 		&:before {
 			content: 'от ';
 		}
@@ -238,6 +331,9 @@
 	position: relative;
 	background: url('../../i/action.jpg') center/cover no-repeat;
 	margin-bottom: $m15;
+	@include bp($point_2) {
+		margin-bottom: $m10;
+	}
 	&:before {
 		position: absolute;
 		top: 0;
@@ -257,13 +353,23 @@
 	position: relative;
 	z-index: 2;
 	@include flex-start;
+	@include bp($point_2) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 .action_content {
 	max-width: 58rem;
 	margin-right: 25rem;
+	@include bp($point_2) {
+		margin: 0 0 5rem 0;
+	}
 }
 .action_title {
 	margin-bottom: 5.9rem;
+	@include bp($point_2) {
+		margin-bottom: 3rem;
+	}
 }
 .action_contacts {
 
@@ -271,6 +377,9 @@
 		a {
 			@include flex-start;
 			display: inline-flex;
+			p {
+				@include link;
+			}
 		}
 		&:not(:last-child) {
 			font-family: $font_3;
@@ -299,17 +408,31 @@
 }
 .action_form_bottom {
 	@include flex-start;
+	@include bp($point_5) {
+		flex-direction: column;
+	}
 	.btn {
 		margin-right: 2rem;
+		@include bp($point_2) {
+			margin: 0 0 2rem 0;
+			width: 100%;
+		}
 		button {
 			font-size: 1.8rem;
 			padding: 2rem 5.3rem;
+			@include bp($point_2) {
+				width: 100%;
+			}
 		}
 	}
 }
 .action_policy {
 	font-size: 1.6rem;
 	max-width: 29.5rem;
+	@include bp($point_5) {
+		font-size: 1.4rem;
+		margin: 0 auto 0 0;
+	}
 	a {
 		border-bottom: .1rem solid $white;
 	}
@@ -319,9 +442,18 @@
 }
 .about_main {
 	@include flex-start;
+	margin-bottom: calc($m15 + 2rem);
+	@include bp($point_2) {
+		margin-bottom: $m10;
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 .about_content {
 	max-width: 60.5rem;
+	@include bp($point_2) {
+		margin-bottom: 4rem;
+	}
 }
 .about_title {
 	margin-bottom: 2rem;
@@ -337,9 +469,20 @@
 	top: 50%;
 	transform: translateY(-50%);
 	max-width: 94.5rem;
+	@include bp($point_2) {
+		position: static;
+		transform: none;
+		max-width: 100%;
+
+	}
 }
 .about_slider {
 	height: 39.3rem;
+	margin-bottom: 5rem!important;
+	@include bp($point_2) {
+		height: auto;
+		margin-bottom: 3rem!important;
+	}
 }
 .swiper {
 }
@@ -354,19 +497,35 @@
 	img {
 		height: 100%;
 		object-fit: cover;
+		@include bp($point_2) {
+			height: auto;
+		}
 	}
 }
 .about_bottomNav {
+	@include flex-start;
 }
 .aboutSlider_nav {
 	@include flex-start;
-
+	margin-right: 5rem;
 	div {
+		border-radius: 100%;
 		width: 4.5rem;
 		height: 4.5rem;
 		@include flex-center;
 		background-color: $green;
-	}
+		color: $white;
+		cursor: pointer;
+		@include bp($point_5) {
+			width: 3.5rem;
+			height: 3.5rem;
+		}
+		&:first-child {
+			margin-right: 2.5rem;
+			@include bp($point_5) {
+				margin-right: 1rem;			}
+		}
+ 	}
 }
 .about_slider_next {
 }
@@ -381,16 +540,57 @@
 .icon-prev {
 }
 .aboutSlider_scrollbar {
+	height: .3rem;
+	border-bottom: .3rem solid rgba(65, 169, 129, 0.2);
+	width: 100%;
+	max-width: 48rem;
+	@include bp($point_2) {
+		max-width: 100%;
+	}
+	.swiper-scrollbar-drag {
+		border-bottom: .3rem solid $green;
+	}
 }
 .homenews {
 }
 .popularNews_grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	grid-gap:3rem;
+	margin-bottom: $m15;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+		margin-bottom: $m10;
+		grid-gap: 2rem;
+	}
+	@include bp($point_5) {
+		grid-gap: 4rem;
+	}
 }
 .cardNews_date {
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+	background-color: $white;
+	font-size: 1.6rem;
+	@include flex-center;
+	padding: 1rem 2rem;
+	border-radius: 5rem;
+	font-family: $font_2;
+	@include bp($point_2) {
+		font-size: 1.4rem;
+	}
 }
 .cardNews_icon {
+	margin-right: 1rem;
+	color: $green;
 }
 .icon-date {
 }
 .productsCard_txt {
+	font-size: 1.8rem;
+	margin-bottom: .6rem;
+	@include bp($point_5) {
+		font-size: 1.6rem;
+	}
 }

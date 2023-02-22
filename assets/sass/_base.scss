@@ -6,6 +6,9 @@
 html {
 	height: 100%;
 	font: 400 calc(100vw / 1920 * 10)/1.33 $font_1;
+	@include bp($point_2) {
+		font-size: 10px;
+	}
 }
 
 body {
@@ -25,8 +28,27 @@ body {
 
 	overflow-x: hidden;
 
+	@include bp($point_2) {
+		font-size: 1.6rem;
+	}
+
 	@supports (display: grid) {
 		display: block;
+	}
+
+	&.hidden {
+		overflow: hidden;
+		padding-right: 18px;
+		@include bp($point_2) {
+			padding-right: 0;
+		}
+
+		header {
+			padding-right: 18px;
+			@include bp($point_2) {
+				padding-right: 0;
+			}
+		}
 	}
 }
 
@@ -46,6 +68,12 @@ body {
 	padding: $header 0 0;
 
 	flex: 1 0 auto;
+	@include bp($point_2) {
+		padding: $header_tab 0 0;
+	}
+	@include bp($point_5) {
+		padding: $header_mob 0 0;
+	}
 }
 
 a {

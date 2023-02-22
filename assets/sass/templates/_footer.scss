@@ -4,6 +4,11 @@
 	flex: 0 0 auto;
 	will-change: transform;
 	position: relative;
+	background-color: $dark;
+	overflow-x: hidden;
+	* {
+		color: $white;
+	}
 }
 
 .footer {
@@ -11,14 +16,76 @@
 .section_in {
 }
 .footer_main {
+	padding: 4rem 0 1.5rem 0;
+
+	.header_social  {
+		margin-right: 0;
+	}
 }
 .footer_top {
 }
 .footer_form_title {
+	h6 {
+		font-size: 2.5rem;
+		margin-bottom: 4rem;
+	}
 }
 .footer_form {
+	@include flex-start;
+	margin-bottom: 7rem;
+	@include bp($point_2) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 .footer_inputs_row {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	grid-gap: 2rem;
+	width: 100%;
+	max-width: 99rem;
+	margin-right: 2.5rem;
+	@include bp($point_2) {
+		// grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+		margin: 0 0 2rem 0;
+		max-width: 100%;
+		grid-gap: 1rem;
+		// max-width: 50rem;
+	}
+
+	@include bp($point_5) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		margin: 0 0 3rem 0;
+	}
+	input {
+		font-size: 1.8rem;
+		padding: 2rem 3rem;
+		@include bp($point_2) {
+			padding: 1.7rem 2rem;
+			font-size: 1.4rem;
+			line-height: 100%;
+		}
+	}
+
+	& div {
+		display: flex;
+	}
+
+	.global_input  {
+		margin-bottom: 0;
+	}
+
+	button {
+		width: 100%;
+		font-size: 1.8rem;
+		padding: 2rem 7rem;
+		line-height: 2.4rem;
+		@include bp($point_2) {
+			line-height: 100%;
+			font-size: 1.6rem;
+			padding: 1.7rem 2rem;
+		}
+	}
 }
 .global_input {
 }
@@ -27,12 +94,56 @@
 .btn {
 }
 .footer_policy {
+	font-size: 1.6rem;
+	@include bp($point_2) {
+		max-width: 30rem;
+	}
+	@include bp($point_5) {
+		font-size: 1.4rem;
+	}
+	a {
+		border-bottom: .1rem solid $white;
+	}
 }
 .footer_contacts {
+	@include flex-start;
+	margin-bottom: 3rem;
+	@include bp($point_2) {
+		align-items: flex-start;
+		flex-direction: column;
+	}
 }
 .footer_contacts_list {
+	@include flex-start;
+	margin-right: 30.5rem;
+	@include bp($point_2) {
+		margin: 0 0 4rem 0;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	li {
+		pointer-events: none;
+		&:not(:last-child) {
+			margin-right: 5rem;
+			pointer-events: all;
+			@include bp($point_2) {
+				margin: 0 0 1.5rem 0;
+			}
+		}
+		a {
+			@include flex-start;
+			font-size: 1.8rem;
+			p {
+				@include link;
+			}
+		}
+
+
+	}
 }
 .action_contactsItem_icon {
+	margin-right: 1.5rem;
+	width: 1.7rem;
 }
 .icon {
 }
@@ -47,10 +158,42 @@
 .mod_social_footer {
 }
 .footer_bottom {
+	@include flex-space;
+	font-size: 1.6rem;
+	padding: 1.7rem 0 0 0;
+	position: relative;
+	@include bp($point_2) {
+		font-size: 1.2rem;
+	}
+	@include bp($point_5) {
+		font-size: 1rem;
+	}
+	&:before {
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 300%;
+		content: '';
+		border-bottom: .1rem solid rgba(255, 255, 255, 0.1);
+	}
 }
 .footer_col_left {
+	@include flex-start;
 }
 .footer_copyright {
+	margin-right: 9rem;
+	@include bp($point_5) {
+		display: none;
+	}
 }
 .footer_col_brand {
+	@include bp($point_2) {
+		max-width: 20rem;
+	}
+	@include bp($point_5) {
+		max-width: 15rem;
+	}
+	a { 
+		@include flex-center;
+	}
 }
