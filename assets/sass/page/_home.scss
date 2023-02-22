@@ -25,8 +25,7 @@
 		background: $big-grad;
 	}
 }
-.section_in {
-}
+
 .hero_main {
 	position: relative;
 }
@@ -62,13 +61,6 @@
 		font-family: $font_2;
 	}
 }
-.btn {
-}
-.hero_btn {
-}
-.typeHome {
-}
-
 .section_title {
 	margin-bottom: 4rem;
 }
@@ -86,8 +78,7 @@
 		}
 	}
 }
-.section_title {
-}
+
 .section_btn_more {
 	a {
 		border-bottom: .1rem dashed $dark;
@@ -152,9 +143,6 @@
 .card_cat_head {
 	@include flex-space;
 	margin-bottom: 13.6rem;
-	// @include bp($point_2) {
-	// 	flex-direction: column;
-	// }
 	@include bp($point_5) {
 		width: 100%;
 	}
@@ -163,7 +151,6 @@
 		margin-right: 7rem;
 		@include bp($point_2) {
 			font-size: 2rem;
-			// margin: 0 0 2rem 0;
 		}
 	}
 }
@@ -205,20 +192,14 @@
 		}
 	}
 }
-.card_catBtn {
-}
-.trans_mod {
-}
-.popular {
-}
+
 .popular_main {
 	margin-bottom: $m15;
 	@include bp($point_2) {
 		margin-bottom: $m10;
 	}
 }
-.popular_list {
-}
+
 .global_products {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
@@ -227,8 +208,7 @@
 		grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
 	}
 }
-.productCard {
-}
+
 .productsCard_img {
 	border-radius: 2rem;
 	overflow: hidden;
@@ -298,9 +278,6 @@
 }
 .productsCard_link {
 	margin-right: 2.5rem;
-	// @include bp($point_2) {
-	// 	order: 2;
-	// }
 	button {
 		font-size: 1.8rem;
 		padding: 1.8rem 4.3rem;
@@ -392,20 +369,12 @@
 	width: 1.7rem;
 	@include flex-center;
 }
-.icon {
-}
-.icon-phone {
-}
-.icon-envelope {
-}
+
 .action_form {
 	width: 100%;
 	max-width: 58rem
 }
-.global_input {
-}
-.action_input {
-}
+
 .action_form_bottom {
 	@include flex-start;
 	@include bp($point_5) {
@@ -458,10 +427,7 @@
 .about_title {
 	margin-bottom: 2rem;
 }
-.about_content_txt {
-}
-.global_txt {
-}
+
 .about_slider_w {
 	max-width: 100%;
 	position: absolute;
@@ -484,12 +450,7 @@
 		margin-bottom: 3rem!important;
 	}
 }
-.swiper {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
+
 .about_slide {
 	width: 100%;
 	border-radius: 3rem;
@@ -527,18 +488,7 @@
 		}
  	}
 }
-.about_slider_next {
-}
-.next {
-}
-.icon-next {
-}
-.about_slider_prev {
-}
-.prev {
-}
-.icon-prev {
-}
+
 .aboutSlider_scrollbar {
 	height: .3rem;
 	border-bottom: .3rem solid rgba(65, 169, 129, 0.2);
@@ -551,8 +501,7 @@
 		border-bottom: .3rem solid $green;
 	}
 }
-.homenews {
-}
+
 .popularNews_grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));

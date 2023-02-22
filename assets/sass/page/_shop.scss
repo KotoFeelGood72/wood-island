@@ -1,10 +1,7 @@
 .shop {
 	margin-bottom: $m10;
 }
-.section_in {
-}
-.shopFilter {
-}
+
 .filterShop_list {
 	@include flex-start;
 	margin-bottom: 6.3rem;
@@ -124,10 +121,7 @@
 		}
 	}
 }
-.priceInput_row {
-}
-.global_input {
-}
+
 .priceMin_input {
 	&:before {
 		content: 'от';
@@ -189,48 +183,7 @@
 		}
 	}
 }
-.btn {
-}
-.show_productsBtn {
-}
-.clear_productsBtn {
-}
+
 .shop_grid {
 	margin-bottom: 6rem;
-}
-.shop_item {
-}
-.productCard {
-}
-.productsCard_img {
-}
-.productsCard_content {
-}
-.productsCard_params {
-}
-.productsCard_bottom {
-}
-.productsCard_link {
-}
-.productsCard_price {
-}
-.btn_listsMore {
-}
-.shop_moreBtn {
-}
-.shop_btnMore_icon {
-}
-.icon {
-}
-.icon-down {
-}
-.gallery_slider {
-}
-.swiper {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
-.gallery_img {
 }
